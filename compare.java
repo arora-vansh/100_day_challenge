@@ -7,6 +7,7 @@ public class compare {
         no1=scan.nextInt();
         System.out.println("Enter second number:");
         no2=scan.nextInt();
+        scan.close();
         if (no1 == no2)
         System.out.println("Entered numbers are same");
         else
