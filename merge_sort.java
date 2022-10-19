@@ -1,5 +1,6 @@
 import java.util.Scanner;
-public class merge_sort {
+public class merge_sort 
+{
     public static void main(String[] args){
         try(Scanner scan = new Scanner(System.in)){
             int n,i;
@@ -11,21 +12,20 @@ public class merge_sort {
             {
                 a[i] = scan.nextInt();
             }
-            sort(a, 0, n-1);
+            merge_sort ob = new merge_sort();
+            ob.sort(a, 0, n-1);
             System.out.print("The sorted array is ");
-            for(i=0 ; i<n ; i++)
+            for(i=0 ; i<n ; ++i)
             System.out.print(a[i] + " ");
         }
     }
-    static int sort(int a[],int f,int l)
+    int sort(int a[],int f,int l)
     {
         if(f<l)
         {
-            int m = (f + l-1)/2;
+            int m = (f +(l-1))/2;
             sort(a,f,m);
-            System.out.print("1 ");
             sort(a,m+1,l);
-            System.out.print("1 ");
             merge(a,f,m,l);
         }
 
@@ -33,31 +33,31 @@ public class merge_sort {
     }
     static int merge(int a[], int f, int m, int l)
     {
-        int n1,n2,i=0,j=0,k=0;
-        System.out.print("2 ");
+        int n1,n2;
         n1 = m - f + 1;
         n2 = l - m;
 
-        int[] a1 = new int[n1];
-        int[] a2 = new int[n2];
+        int a1[] = new int[n1];
+        int a2[] = new int[n2];
 
 
-        for(i=0 ; i<n1 ; i++)
+        for(int i=0 ; i<n1 ; ++i)
         a1[i] = a[f+i];
 
-        for(j=0 ; j<n2 ; j++)
+        for(int j=0 ; j<n2 ; ++j)
         a2[j] = a[m+1+j];
 
+        int i=0,j=0,k=f; 
         while(i<n1 && j<n2)
         {
-            if(a1[i]<a2[j])
+            if(a1[i]<=a2[j])
             {
-                a[k] = a[i];
+                a[k] = a1[i];
                 i++;
             }
             else
             {
-                a[k] = a[j];
+                a[k] = a2[j];
                 j++;
             }
             k++;
@@ -80,5 +80,3 @@ public class merge_sort {
     }
     
 }
-
-/*76 58 34 95 03 24 15 */
