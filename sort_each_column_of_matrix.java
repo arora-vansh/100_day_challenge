@@ -1,33 +1,35 @@
 import java.util.Scanner;
-public class sort_each_row_of_matrix 
+public class sort_each_column_of_matrix 
 {
     public static void main(String[] args)
     {
         try(Scanner scan = new Scanner(System.in))
         {
-            int r,c,i,j,temp;
+            int r,c,i,j,k,temp;
             int[][] a = new int[10][10];
-            System.out.print("Enter the number of rows in the matrix:");
+            System.out.print("Enter the number of rows of the matrix:");
             r = scan.nextInt();
-            System.out.print("Enter the number of columns in the matrix:");
+            System.out.print("Enter the number of columns of the matrix:");
             c = scan.nextInt();
             System.out.print("Enter the elements of the matrix:");
             for(i=0 ; i<r ; i++)
             {
                 for(j=0 ; j<c ; j++)
-                a[i][j] = scan.nextInt();
-            }  
-            for(i=0 ; i<r ; i++)
-            {
-                for(j=c-1 ; j>0 ; j--)
                 {
-                    for(int k=0 ; k<j ; k++)
+                    a[i][j] = scan.nextInt();
+                }
+            }
+            for(i=0 ; i<c ; i++)
+            {
+                for(j=r-1 ; j>0 ; j--)
+                {
+                    for(k=0 ; k<j ; k++)
                     {
-                        if(a[i][k] > a[i][k+1])
+                        if(a[k][i] > a[k+1][i])
                         {
-                            temp = a[i][k];
-                            a[i][k] = a[i][k+1];
-                            a[i][k+1] = temp;
+                            temp = a[k][i];
+                            a[k][i] = a[k+1][i];
+                            a[k+1][i] = temp;
                         }
                     }
                 }
