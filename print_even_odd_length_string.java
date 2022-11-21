@@ -12,13 +12,13 @@ public class print_even_odd_length_string
         for(String word : s.split(" "))
         {
             if(word.length() % 2 == 0)
-            System.out.print(word);
+            System.out.print(word + " ");
         } 
-        System.out.print("The odd length words are ");
+        System.out.print("\nThe odd length words are ");
         for(String word : s.split(" "))
         {
             if(word.length() % 2 != 0)
-            System.out.print(word);
+            System.out.print(word + " ");
         }
     } 
 }
