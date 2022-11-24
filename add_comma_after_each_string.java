@@ -4,11 +4,11 @@ public class add_comma_after_each_string
     public static void main(String[] args)
     {
         Scanner scan = new Scanner(System.in);
-        String b;
+        String s;
         System.out.print("Enter the String:");
-        b = scan.nextLine();
+        s = scan.nextLine();
         scan.close();
-        for(String a : b.split(" "))
+        for(String b : s.split(" "))
         {
             System.out.print(b + ", ");
         }
